@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contacto - Anime Paradise</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+  
+  </header>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre">
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email">
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <section id="trabaja">
+    <h2>¿Quieres trabajar con nosotros?</h2>
+    <p>Si eres apasionado del anime y quieres formar parte de nuestro equipo, ¡envíanos tu currículum!</p>
+    <form>
+      <label for="nombre-trabajo">Nombre:</label>
+      <input type="text" id="nombre-trabajo" name="nombre">
+      <label for="email-trabajo">Correo electrónico:</label>
+      <input type="email" id="email-trabajo" name="email">
+      <label for="curriculum">Currículum:</label>
+      <input type="file" id="curriculum" name="curriculum">
+      <button type="submit">Enviar</button>
+    </form>
+    </section>
+    
+
+    
+    <footer>
+        <p>&copy; 2025 Anime Paradise</p>
+    </footer>
+
+    <script>
+        document.getElementById("contacto-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("mensaje-enviado").style.display = "block";
+            this.reset();
+        });
+    </script>
+    <div class="estrellas-container" id="estrellas"></div>
+
+    <script>
+        // Generador de estrellas dinámicas
+        const container = document.getElementById('estrellas');
+        for (let i = 0; i < 80; i++) {
+            const star = document.createElement('div');
+            star.classList.add('estrella');
+            star.style.left = `${Math.random() * 100}%`;
+            star.style.top = `${Math.random() * 100}%`;
+            star.style.width = `${Math.random() * 3 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            star.style.animationDuration = `${Math.random() * 30 + 30}s`;
+            container.appendChild(star);
+        }
+    </script>
+ <script src="loadMenu.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime Paradise</title>
+    <link rel="stylesheet" href="styles.css"> 
+    
+</head>
+<body>
+    <div class="estrellitas"></div>
+    <header>
+     
+    </header>
+    
+    <section id="inicio">
+        <h2>Bienvenidos al mundo del anime</h2>
+        <p>Explora series, personajes y todo lo relacionado con la animación japonesa.</p>
+    </section>
+    
+    <section id="galeria">
+        <h2>Galería</h2>
+        <div class="carrusel">
+            <button class="prev" aria-label="Anterior">
+                <span class="sr-only">Anterior</span>
+            </button>
+            <div class="imagenes">
+                <img src="img_galeria/anime1.jpg" alt="Imagen 1" class="slide">
+                <img src="img_galeria/anime2.jpg" alt="Imagen 2" class="slide">
+                <img src="img_galeria/anime3.jpg" alt="Imagen 3" class="slide">
+                <img src="img_galeria/anime0.jpeg" alt="Imagen 3" class="slide">
+                <img src="img_galeria/mangas.jpg" alt="Imagen 3" class="slide">
+                <img src="img_galeria/pikachu.jpg" alt="Imagen 3" class="slide">
+
+            </div>
+            <button class="next" aria-label="Siguiente">
+                <span class="sr-only">Siguiente</span>
+            </button>
+        </div>
+    </section>
+    
+
+    <section id="ventas">
+        <h2>Ventas</h2>
+        <a href="ventas.html" class="boton">Ver Productos y Cosplays</a>
+
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Déjanos un mensaje para saber más sobre tus animes favoritos.</p>
+        <a href="contacto.html" class="boton">Ir a Contacto</a>
+    </section>
+    
+    
+     
+    
+        
+    <section id="carrito">
+        <h2>🛒 Carrito de Compras</h2>
+        <ul id="lista-carrito"></ul>
+        <p>Total: $<span id="total-carrito">0</span></p>
+        <button onclick="vaciarCarrito()" class="boton">Vaciar Carrito</button>
+        <button onclick="finalizarCompra()" class="boton-primario">Finalizar Compra</button>
+  </section>
+
+    
+    <footer>
+        <p>&copy; 2025 Anime Paradise</p>
+    </footer>
+    <div class="estrellas-container" id="estrellas"></div>
+
+<script>
+    // Generador de estrellas dinámicas
+    const container = document.getElementById('estrellas');
+    for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.classList.add('estrella');
+        star.style.left = `${Math.random() * 100}%`;
+        star.style.top = `${Math.random() * 100}%`;
+        star.style.width = `${Math.random() * 3 + 1}px`;
+        star.style.height = star.style.width;
+        star.style.animationDelay = `${Math.random() * 5}s`;
+        star.style.animationDuration = `${Math.random() * 30 + 30}s`;
+        container.appendChild(star);
+    }
+</script>
+<script src="loadMenu.js"></script>
+
+<!-- Popup para imágenes (Lightbox) -->
+<!-- Lightbox/Popup para imágenes -->
+<div class="popup-overlay" id="imagePopup">
+    <div class="popup-content">
+        <img class="popup-img" id="popupImage" src="" alt="Imagen ampliada">
+        <button class="close-popup" id="closePopup">&times;</button>
+    </div>
+</div>
+
+</body>
+</html>
